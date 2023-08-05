@@ -15,11 +15,9 @@ from django.core.exceptions import ValidationError
 # Create your models here.
 
 
-class Role(models.Model):
+class Role(BaseModel):
     name = models.CharField(max_length=200)
     groups = models.ManyToManyField(Group)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ('-created_at',)
     def __str__(self):

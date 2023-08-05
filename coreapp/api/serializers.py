@@ -5,6 +5,8 @@ from rest_framework import serializers
 
 from coreapp.models import   Document
 from coreapp.utils import auth_utils, otp_utils
+from coreapp.models import Role
+from django.contrib.auth.models import Group, Permission
 
 UserModel = get_user_model()
 
@@ -20,7 +22,7 @@ class SignupSerializer(serializers.ModelSerializer):
         model = UserModel
         fields = (
             'first_name', 'last_name', 'email', 'email', 'password', 'confirm_password',
-             'gender','is_customer',
+             'gender','role',
         )
 
     def validate(self, data):
@@ -33,6 +35,11 @@ class SignupSerializer(serializers.ModelSerializer):
         user = UserModel.objects.create(**validated_data)
         user.set_password(confirm_password)
         user.is_approved = True
+        role = Role.objects.get(id=validated_data.get('role').id)
+        for group in role.groups.all():
+            my_group = Group.objects.get(name=group.name)
+            my_group.user_set.add(user)
+            my_group.save()
         user.save()
         return user
 
