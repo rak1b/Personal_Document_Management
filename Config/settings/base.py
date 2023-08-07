@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'coreapp.apps.CoreappConfig',
     'utility.apps.UtilityConfig',
     'userapp.apps.UserappConfig',
+    'documents.apps.DocumentsConfig',
 ]
 
 MIDDLEWARE = [

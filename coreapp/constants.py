@@ -10,8 +10,3 @@ class GenderChoices(models.IntegerChoices):
 
 
 # Document  Options
-class DocumentChoices(models.IntegerChoices):
-    IMAGE = 0, _("Image")
-    VIDEO = 1, _("Video")
-    FILE = 2, _("File")
-    OTHER = 3, _("Other")

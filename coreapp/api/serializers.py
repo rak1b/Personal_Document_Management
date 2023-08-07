@@ -2,11 +2,10 @@ from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
-
-from coreapp.models import   Document
 from coreapp.utils import auth_utils, otp_utils
 from coreapp.models import Role
 from django.contrib.auth.models import Group, Permission
+from coreapp.helper import print_log
 
 UserModel = get_user_model()
 
@@ -35,11 +34,14 @@ class SignupSerializer(serializers.ModelSerializer):
         user = UserModel.objects.create(**validated_data)
         user.set_password(confirm_password)
         user.is_approved = True
-        role = Role.objects.get(id=validated_data.get('role').id)
-        for group in role.groups.all():
-            my_group = Group.objects.get(name=group.name)
-            my_group.user_set.add(user)
-            my_group.save()
+        try:
+            role = Role.objects.get(id=validated_data.get('role').id)
+            for group in role.groups.all():
+                my_group = Group.objects.get(name=group.name)
+                my_group.user_set.add(user)
+                my_group.save()
+        except Exception as e:
+            print_log("User role and permission not added -->" + str(e))
         user.save()
         return user
 
@@ -149,10 +151,3 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 
 
-class DocumentSerializer(serializers.ModelSerializer):
-    doc_url = serializers.CharField(read_only=True, source="get_url")
-
-    class Meta:
-        model = Document
-        fields = '__all__'
-        read_only_fields = ('owner',)

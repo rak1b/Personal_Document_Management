@@ -14,9 +14,6 @@ from ..utils import auth_utils, otp_utils
 from ..models import LoginHistory
 from rest_framework.views import APIView
 from django.db.models import Q,Sum,Count,Avg
-from coreapp.models import Document
-
-
 
 class SignupAPI(APIView):
     permission_classes = [AllowAny, ]
@@ -235,26 +232,8 @@ class ResendVerificationAPI(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UploadDocumentsAPI(APIView):
 
-    @extend_schema(
-        request=serializers.DocumentSerializer,
-        responses={200: serializers.DocumentSerializer},
-    )
-    def post(self, request):
-        serializer = serializers.DocumentSerializer(
-            data=request.data, context={"request": self.request}
-        )
-        if serializer.is_valid():
-            serializer.save(owner=self.request.user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-class WebUploadDocumentsAPI(ModelViewSet):
-    permission_classes = [AllowAny, ]
-    queryset = Document.objects.all()
-    serializer_class = serializers.DocumentSerializer
-    http_method_names=['post']
 
 
 

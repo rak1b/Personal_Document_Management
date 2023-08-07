@@ -93,14 +93,6 @@ class LoginHistory(BaseModel):
         return f"{self.user} - {self.ip_address} - {self.user_agent} - {self.is_success}"
 
 
-class Document(BaseModel):
-    title = models.CharField(max_length=200)
-    description = models.TextField(blank=True, null=True)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,blank=True,null=True)
-    document = models.FileField(upload_to='documents/%Y/%m/%d/')
-    doc_type = models.SmallIntegerField(choices=constants.DocumentChoices.choices)
-    shared_with = models.ManyToManyField(User, related_name='shared_with', blank=True)
-    def __str__(self):
-        return f"{self.owner} - {self.document.name}"
+
 
 

@@ -1,7 +1,13 @@
-from django.urls import path, include
+from django.urls import path
+from rest_framework import routers
+
+from . import views
+
+router = routers.DefaultRouter()
+# router.register(r"page", views.PageAdminAPI)
+
 
 urlpatterns = [
-    path("mobile/", include("utility.api.mobile.urls")),
-    path("admin/", include("utility.api.admin.urls")),
-    path("web/", include("utility.api.web.urls")),
+    # path("global-settings/", views.GlobalSettingsAPI.as_view())
 ]
+urlpatterns += router.urls

@@ -4,10 +4,10 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-# router.register(r"page", views.PageAdminAPI)
+router.register(r"", views.DocumentAPI)
 
 
 urlpatterns = [
-    # path("global-settings/", views.GlobalSettingsAPI.as_view())
+    # path('upload/', views.UploadDocumentsAPI.as_view(), name='documents-upload'),
 ]
 urlpatterns += router.urls
