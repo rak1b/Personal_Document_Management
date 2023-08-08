@@ -6,11 +6,7 @@ drf-spectacular==0.24.2
 django-crontab
 mysqlclient
 python-decouple==3.6
-twilio
-python-barcode
-qrcode
+
 pillow
-django-wkhtmltopdf==3.4.0  
-openpyxl-image-loader
-xhtml2pdf
-django-import-export
+PyPDF2
+python-docx

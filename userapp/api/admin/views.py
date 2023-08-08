@@ -23,6 +23,7 @@ class GroupAPI(ModelViewSet):
             return serializers.GroupSerializerCustom
         return serializers.GroupSerializer
     
+    @extend_schema(request=serializers.GroupSerializerCustom)
     def create(self, request, *args, **kwargs):
         '''
         Demo Format for POST:\n

@@ -14,6 +14,7 @@ class GroupSerializer(serializers.ModelSerializer):
         model = Group
         fields = '__all__'
 class GroupSerializerCustom(serializers.Serializer):
+    group_name=serializers.JSONField()
     
     def create(self, validated_data):
         GROUPS = self.context.get("request").data
@@ -31,7 +32,7 @@ class GroupSerializerCustom(serializers.Serializer):
                         print("Permission not found with name '{}'.".format(name))
                         continue
                     new_group.permissions.add(model_add_perm)
-        return "Crete Group Successfully"
+        return "Created Group Successfully"
 
 
 class RoleSerializer(serializers.ModelSerializer):

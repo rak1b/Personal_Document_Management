@@ -24,3 +24,8 @@ class DocumentSerializer(serializers.ModelSerializer):
 
 class DocumentShareSerializer(serializers.Serializer):
     users=serializers.ListField(child=serializers.IntegerField())
+    share=serializers.BooleanField(default=True)
+
+
+class DocumentConvertSerializer(serializers.Serializer):
+    convert_format = serializers.IntegerField()

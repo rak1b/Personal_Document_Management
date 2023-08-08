@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "6021bf20-05f9-4495-965f-374d7c2ddf24",
+		"name": "Document Managentment API V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15563266"
+	},
+	"item": [
+		{
+			"name": "Document Upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Document Share",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Document",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Document Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base}}/api/v1/auth/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "Document Convert",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Group",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Role",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "test_file",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/rak13/OneDrive/Desktop/SamplePNGImage_20mbmb - Copy.webp"
+						},
+						{
+							"key": "doc_type",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{base}}/api/v1/documents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Document Download",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token_2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{base}}/api/v1/documents/5/download/"
+			},
+			"response": []
+		},
+		{
+			"name": "Document List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token_2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{base}}/api/v1/documents/5/download/"
+			},
+			"response": []
+		}
+	]
+}
